@@ -1,0 +1,216 @@
+Grading r5290 by dzhang55 committed on Wed Aug 31 23:16:04 CDT 2016
+Monad Autograder
+Testing mp1 at 2016-09-01 01:34:24
+
+"Microsoft has a new version out, Windows XP, which according to everybody is the 'most reliable Windows ever.' To me, this is like saying that asparagus is 'the most articulate vegetable ever.'" ~ Dave Barry
+
+Setting up test environment...
+Compiling...
+================================================================
+In file included from unit_tests.cpp:8:
+./rgbapixel.h:6:17: error: expected unqualified-id
+class RGBAPixel()
+                ^
+unit_tests.cpp:18:15: error: variable has incomplete type 'RGBAPixel'
+    RGBAPixel normal;
+              ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+unit_tests.cpp:27:15: error: variable has incomplete type 'RGBAPixel'
+    RGBAPixel three( 100, 200, 30 );
+              ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+3 errors generated.
+In file included from png.cpp:13:
+In file included from ./png.h:25:
+./rgbapixel.h:6:17: error: expected unqualified-id
+class RGBAPixel()
+                ^
+png.cpp:24:16: error: subscript of pointer to incomplete type 'RGBAPixel'
+        return _pixels[_width * y + x];
+               ~~~~~~~^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:29:2: warning: deleting pointer to incomplete type 'RGBAPixel' may cause undefined behavior [-Wdelete-incomplete]
+        delete [] _pixels;
+        ^         ~~~~~~~
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:37:16: error: allocation of incomplete type 'RGBAPixel'
+        _pixels = new RGBAPixel[_height * _width];
+                      ^~~~~~~~~
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:42:16: error: no viable overloaded '='
+                        _pixel(x,y) = other._pixel(x,y);
+                        ~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~
+png.cpp:42:16: note: type 'RGBAPixel' is incomplete
+                        _pixel(x,y) = other._pixel(x,y);
+                        ~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~
+png.cpp:54:8: error: member access into incomplete type 'RGBAPixel'
+                        curr.red = 255;
+                            ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:55:8: error: member access into incomplete type 'RGBAPixel'
+                        curr.green = 255;
+                            ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:56:8: error: member access into incomplete type 'RGBAPixel'
+                        curr.blue = 255;
+                            ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:57:8: error: member access into incomplete type 'RGBAPixel'
+                        curr.alpha = 255;
+                            ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:68:16: error: allocation of incomplete type 'RGBAPixel'
+        _pixels = new RGBAPixel[1];
+                      ^~~~~~~~~
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:127:16: error: allocation of incomplete type 'RGBAPixel'
+        _pixels = new RGBAPixel[_height * _width];
+                      ^~~~~~~~~
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:158:17: error: member access into incomplete type 'const RGBAPixel'
+    return first.red == second.red && first.green == second.green && first.blue == second.blue && first.alpha == second.alpha;
+                ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:157:68: warning: unused parameter 'second' [-Wunused-parameter]
+bool PNG::_pixels_same( const RGBAPixel & first, const RGBAPixel & second ) const {
+                                                                   ^
+png.cpp:302:16: error: allocation of incomplete type 'RGBAPixel'
+        _pixels = new RGBAPixel[_height * _width];
+                      ^~~~~~~~~
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:315:10: error: member access into incomplete type 'RGBAPixel'
+                                pixel.red = color;
+                                     ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:316:10: error: member access into incomplete type 'RGBAPixel'
+                                pixel.green = color;
+                                     ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:317:10: error: member access into incomplete type 'RGBAPixel'
+                                pixel.blue = color;
+                                     ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:319:11: error: member access into incomplete type 'RGBAPixel'
+                                        pixel.alpha = (uint8_t) *pix++;
+                                             ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:321:11: error: member access into incomplete type 'RGBAPixel'
+                                        pixel.alpha = 255;
+                                             ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:325:10: error: member access into incomplete type 'RGBAPixel'
+                                pixel.red = (uint8_t) *pix++;
+                                     ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+png.cpp:326:10: error: member access into incomplete type 'RGBAPixel'
+                                pixel.green = (uint8_t) *pix++;
+                                     ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+2 warnings and 20 errors generated.
+make: *** [png.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from unit_tests.cpp:8:
+./rgbapixel.h:6:17: error: expected unqualified-id
+class RGBAPixel()
+                ^
+unit_tests.cpp:18:15: error: variable has incomplete type 'RGBAPixel'
+    RGBAPixel normal;
+              ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+unit_tests.cpp:27:15: error: variable has incomplete type 'RGBAPixel'
+    RGBAPixel three( 100, 200, 30 );
+              ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+3 errors generated.
+In file included from rgbapixel.cpp:1:
+./rgbapixel.h:6:17: error: expected unqualified-id
+class RGBAPixel()
+                ^
+rgbapixel.cpp:3:1: error: incomplete type 'RGBAPixel' named in nested name specifier
+RGBAPixel::RGBAPixel()
+^~~~~~~~~~~
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+rgbapixel.cpp:11:1: error: incomplete type 'RGBAPixel' named in nested name specifier
+RGBAPixel::RGBPixel(uint8_t red, uint8_t green, uint8_t blue)
+^~~~~~~~~~~
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+3 errors generated.
+make: *** [rgbapixel.o] Error 1
+In file included from unit_tests.cpp:8:
+./rgbapixel.h:6:17: error: expected unqualified-id
+class RGBAPixel()
+                ^
+unit_tests.cpp:18:15: error: variable has incomplete type 'RGBAPixel'
+    RGBAPixel normal;
+              ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+unit_tests.cpp:27:15: error: variable has incomplete type 'RGBAPixel'
+    RGBAPixel three( 100, 200, 30 );
+              ^
+./rgbapixel.h:6:7: note: forward declaration of 'RGBAPixel'
+class RGBAPixel()
+      ^
+3 errors generated.
+ld: no input files
+
+
+Running tests...
+================================================================
+Could not execute test cases
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+
