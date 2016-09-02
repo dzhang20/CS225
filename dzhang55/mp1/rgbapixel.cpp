@@ -8,11 +8,11 @@ RGBAPixel::RGBAPixel()
     blue = 255;
 }
 
-RGBAPixel::RGBPixel(uint8_t red, uint8_t green, uint8_t blue)
+RGBAPixel::RGBAPixel(std::uint8_t red, std::uint8_t green, std::uint8_t blue)
 {
-	red = red;
-	green = green;
-	blue = blue;
+	this->red = red;
+	this->green = green;
+	this->blue = blue;
     alpha =255;
 }
 
