@@ -1,0 +1,24 @@
+Grading r8687 by dzhang55 committed on Wed Sep  7 20:43:19 CDT 2016
+Monad Autograder
+Testing lab_memory at 2016-09-12 00:26:48
+
+"Doing more things faster is no substitute for doing the right things." ~ Stephen R. Covey
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_constructor (asan) [5 pts]  - passed
+test_allocate (asan)  . [5 pts]  - passed
+test_printrooms (asan)  [20 pts] - passed
+test_any_output . . . . [30 pts] - passed
+test_correct_output . . [40 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
