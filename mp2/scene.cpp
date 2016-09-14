@@ -66,11 +66,11 @@ void Scene::changemaxlayers(int newmax){
 
         }
 
-        int newx_cood= new int[newmax];
+        int* newx_cood= new int[newmax];
 
-        int newy_cood= new int[newmax];
+        int* newy_cood= new int[newmax];
 
-        Image newimage= new Image*[newmax];
+        Image** newimage= new Image*[newmax];
 
         for(int i=0;i<newmax;i++){
 
@@ -107,9 +107,9 @@ void Scene::addpicture(const char* FileName, int index, int x, int y){
 
                 image[index]=newimage;
 
-                x_cood=x;
+                x_cood=&x;
 
-                y_cood=y;
+                y_cood=&y;
 
         }else
 
@@ -130,7 +130,7 @@ void Scene::changelayer(int index, int newindex){
 
                         delete image[newindex];
 
-                image[newidex]=image[index];
+                image[newindex]=image[index];
 
                 x_cood[newindex]=x_cood[index];
 
@@ -198,13 +198,13 @@ Image* Scene::getpicture(int index)const{
         }
 
 }
-
-
 Image Scene::drawscene() const{
 
-        return image;
+       Image* newImage = new Image();
+	return *newImage;
 
 }
+
 
 void Scene::clear(){
 
