@@ -16,12 +16,13 @@ class Scene{
 		void translate (int index, int xcoord, int ycoord);
 		void deletepicture (int index);
 		Image * getpicture (int index) const;
-		Image drawscene () const;
+		Image drawscene() const;
 	private:
 		int max;
 		int* x_cood;
 		int* y_cood;
 		Image** image;
-
+		void copy(const Scene& source);
+		void clear();
 };
 #endif
