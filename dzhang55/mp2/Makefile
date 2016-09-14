@@ -29,4 +29,4 @@ rgbapixel.o : rgbapixel.cpp rgbapixel.h
 	$(CXX) $(CXXFLAGS) rgbapixel.cpp
 
 clean :
-	-rm -f *.o $(EXENAME)
+	-rm -f *.o $(EXENAME1) $(EXENAME2) 
