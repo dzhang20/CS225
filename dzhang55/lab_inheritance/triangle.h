@@ -35,7 +35,7 @@ class Triangle : public Shape
 
     Triangle(const Triangle& other);
 
-    ~Triangle();
+    virtual ~Triangle();
 
     Triangle& operator=(const Triangle& rhs);
 
