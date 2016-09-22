@@ -30,10 +30,18 @@ List<T>::~List()
 template <class T>
 void List<T>::clear()
 {
-    // @todo Graded in lab_gdb
-    // Write this function based on mp3
+	ListNode* temp = head;
+	ListNode* another = NULL;
+	while(temp!=NULL){
+			another = temp->next;
+			delete temp;
+			temp = another;
+		if(temp == NULL){
+			head = NULL;
+			length = 0;
+		}
+	}	
 }
-
 /**
  * Inserts a new node at the front of the List.
  * This function **SHOULD** create a new ListNode.
@@ -43,6 +51,15 @@ void List<T>::clear()
 template <class T>
 void List<T>::insertFront(T const& ndata)
 {
+	ListNode* temp = new ListNode(ndata);
+	if(length==0)
+		head = temp;
+	else{
+		temp->next = head;
+		head = temp;
+		temp = NULL;
+	}
+	length++;
     // @todo Graded in lab_gdb
     // Write this function based on mp3
 }
@@ -62,10 +79,11 @@ void List<T>::insertBack(const T& ndata)
 
     if (temp == NULL) {
         head = new ListNode(ndata);
+	length++;
     } else {
         while (temp->next != NULL)
             temp = temp->next;
-        temp = new ListNode(ndata);
+        temp->next = new ListNode(ndata);
         length++;
     }
 }
@@ -94,7 +112,9 @@ typename List<T>::ListNode* List<T>::reverse(ListNode* curr, ListNode* prev,
 {
     // @todo Graded in lab_gdb
     ListNode* temp;
-    if (len <= 0) {
+    if (len <= 1) {
+		if(length == 0)
+			return curr;
         curr->next = prev;
         return curr;
     } else {
@@ -122,11 +142,17 @@ void List<T>::shuffle()
     // two should point at the start of the second half-list
     ListNode *one, *two, *prev, *temp;
     one = two = prev = temp = head;
+	if(length==0)
+		return;
 
     for (int i = 0; i < length / 2; i++) {
         prev = two;
         two = two->next;
     }
+	if(length%2==1){
+		prev=prev->next;
+		two=two->next;
+	}
     prev->next = NULL;
 
     // interleave
@@ -135,5 +161,6 @@ void List<T>::shuffle()
         one->next = two;
         two = two->next;
         one->next->next = temp;
+	one = temp;
     }
 }
