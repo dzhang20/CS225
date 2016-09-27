@@ -1,8 +1,8 @@
-Grading r20070 by enx-cs225autograder committed on Sun Sep 25 02:57:28 CDT 2016
+Grading r20957 by enx-cs225autograder committed on Mon Sep 26 03:29:12 CDT 2016
 Monad Autograder
-Testing mp3 at 2016-09-26 01:01:35
+Testing mp3 at 2016-09-27 00:37:45
 
-"At least for a while, in your heart of hearts you'll be confident only that the university will soon enough discover its error in awarding you the PhD, and at some point will brand you (in public no doubt) the fraud you know you are. This too will pass as you come to realize that students are extremely gullible and many of your colleagues are even greater frauds than you." ~ Berkeley PhD Advice
+"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability." ~ John Woods
 
 Setting up test environment...
 Compiling...
