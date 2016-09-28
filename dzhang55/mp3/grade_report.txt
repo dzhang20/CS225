@@ -1,8 +1,8 @@
-Grading r20957 by enx-cs225autograder committed on Mon Sep 26 03:29:12 CDT 2016
+Grading r21331 by enx-cs225autograder committed on Tue Sep 27 03:10:18 CDT 2016
 Monad Autograder
-Testing mp3 at 2016-09-27 00:37:45
+Testing mp3 at 2016-09-28 00:37:57
 
-"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability." ~ John Woods
+"If I had a 3D Reese's chocolate printer I would use that thing all the time always." ~ Chase Geigle
 
 Setting up test environment...
 Compiling...
