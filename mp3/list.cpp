@@ -17,7 +17,7 @@
 template <class T>
 List<T>::~List()
 {
-    /// @todo Graded in MP3.1
+ clear();  /// @todo Graded in MP3.1
 }
 
 /**
@@ -28,6 +28,18 @@ template <class T>
 void List<T>::clear()
 {
     /// @todo Graded in MP3.1
+	if(length==0)
+		return;
+	ListNode* curr = head;
+	ListNode* prev = NULL;
+	while(length!=0){
+		prev = curr;
+		curr = curr->next;
+		delete prev;
+		length--;
+	}
+	head = NULL;
+	tail = NULL;
 }
 
 /**
@@ -40,6 +52,16 @@ template <class T>
 void List<T>::insertFront(T const& ndata)
 {
     /// @todo Graded in MP3.1
+	ListNode* curr = new ListNode(ndata);
+	if(length==0){
+		head = curr;
+		length++;
+	}else{
+		curr->next = head;
+		head = curr;
+		curr = NULL;
+		length++;
+	}
 }
 
 /**
@@ -52,6 +74,19 @@ template <class T>
 void List<T>::insertBack(const T& ndata)
 {
     /// @todo Graded in MP3.1
+	ListNode* curr = head;
+	if(curr == NULL){
+		head = new ListNode(ndata);
+		tail = head;
+		length++;
+	}else{
+		curr = tail;
+		tail = new ListNode(ndata);
+		curr->next = tail;
+		tail->prev = curr;
+		curr = NULL;
+		length++;
+	}
 }
 
 /**
@@ -78,6 +113,27 @@ template <class T>
 void List<T>::reverse(ListNode*& startPoint, ListNode*& endPoint)
 {
     /// @todo Graded in MP3.1
+	if(endPoint->next==startPoint||startPoint==endPoint)
+		return;
+	else{
+		ListNode* newStart = startPoint;
+		if(startPoint->prev == NULL);
+		else
+			startPoint->prev->next = newStart;
+		startPoint->next->prev = newStart;
+		endPoint->prev->next = startPoint;
+		if(endPoint->next == NULL);
+		else
+			endPoint->next->prev = startPoint;
+		startPoint->prev = endPoint->prev;
+		startPoint->next = endPoint->next;
+		endPoint->prev = newStart->prev;
+		endPoint->next = newStart->next;
+		newStart->prev->next = endPoint;
+		newStart->next->prev = endPoint;
+		newStart = NULL;
+		return reverse(endPoint->next,startPoint->next); 
+	}
 }
 
 /**
@@ -89,7 +145,22 @@ void List<T>::reverse(ListNode*& startPoint, ListNode*& endPoint)
 template <class T>
 void List<T>::reverseNth(int n)
 {
+	ListNode* curr = head;
+	int tempN = n;
     /// @todo Graded in MP3.1
+	if(n>length)
+		reverse(head,tail);
+	else{
+		if(n==1)
+			return;
+		while(n!=1){
+			head = head->next;
+			n--;
+		}
+		reverse(curr,head);
+		return this->reverseNth(tempN);
+		head = curr;
+	}
 }
 
 /**
