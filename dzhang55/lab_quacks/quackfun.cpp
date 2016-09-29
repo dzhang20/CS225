@@ -29,10 +29,13 @@ T sum(stack<T>& s)
      // stub return value (0 for primitive types). Change this!
                 // Note: T() is the default value for objects, and 0 for
                 // primitive types
-	if(s.size()==1)
-		return s;
-	else
-		return s+sum(s.top());
+	if(s.size()==0)
+		return 0;
+	T temp = s.top();
+	s.pop();
+	int total = temp + sum(s);
+	s.push(temp);
+	return total;
 }
 
 /**
@@ -52,8 +55,46 @@ void scramble(queue<T>& q)
 {
     stack<T> s;
     // optional: queue<T> q2;
-
     // Your code here
+	int size = q.size();
+	int partSize = 1;
+	while(size>0){
+		if(size<partSize){
+			if(partSize%2==1){
+                        	for(int i=0;i<size;i++){
+                                	q.push(q.front());
+                                	q.pop();
+                        	}
+                	}else{
+                        	for(int i=0;i<size;i++){
+                                	s.push(q.front());
+                                	q.pop();
+                        	}
+                        	for(int i=0;i<size;i++){
+                                	q.push(s.top());
+                                	s.pop();
+                        	}
+                	}
+		}else{
+		if(partSize%2==1){
+			for(int i=0;i<partSize;i++){
+				q.push(q.front());
+				q.pop();	
+			}
+		}else{
+			for(int i=0;i<partSize;i++){
+				s.push(q.front());
+				q.pop();
+			}
+			for(int i=0;i<partSize;i++){
+				q.push(s.top());
+				s.pop();
+			}
+		}
+	}
+		size-=partSize;
+		partSize++;
+	}
 }
 
 /**
