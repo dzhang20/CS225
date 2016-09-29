@@ -1,8 +1,8 @@
-Grading r21331 by enx-cs225autograder committed on Tue Sep 27 03:10:18 CDT 2016
+Grading r21949 by dzhang55 committed on Wed Sep 28 17:09:46 CDT 2016
 Monad Autograder
-Testing mp3 at 2016-09-28 00:37:57
+Testing mp3 at 2016-09-29 00:41:22
 
-"If I had a 3D Reese's chocolate printer I would use that thing all the time always." ~ Chase Geigle
+"To iterate is human, to recurse divine." ~ L. Peter Deutsch
 
 Setting up test environment...
 Compiling...
@@ -12,8 +12,8 @@ Compiling...
 Running tests...
 ================================================================
 testInsertFront  . . . . . . . . [2 pts]  - FAILED
-testInsertBack . . . . . . . . . [2 pts]  - FAILED
-testDestructor10 (asan)  . . . . [3 pts]  - FAILED
+testInsertBack . . . . . . . . . [2 pts]  - passed
+testDestructor10 (asan)  . . . . [3 pts]  - passed
 testDestructor37 (asan)  . . . . [3 pts]  - FAILED
 testReverse20_size . . . . . . . [1 pts]  - FAILED
 testReverse20_forward  . . . . . [1 pts]  - FAILED
@@ -32,13 +32,13 @@ testReverseNth37_4_backward  . . [1 pts]  - FAILED
 testReverseNth37_37  . . . . . . [1 pts]  - FAILED
 testReverseNth37_4_memory (asan) [1 pts]  - FAILED
 testReverseNthEmpty (asan) . . . [1 pts]  - FAILED
-testWaterfall4_size  . . . . . . [1 pts]  - FAILED
+testWaterfall4_size  . . . . . . [1 pts]  - passed
 testWaterfall4_forward . . . . . [1 pts]  - FAILED
 testWaterfall4_backward  . . . . [2 pts]  - FAILED
-testWaterfall7_size  . . . . . . [1 pts]  - FAILED
+testWaterfall7_size  . . . . . . [1 pts]  - passed
 testWaterfall7_forward . . . . . [1 pts]  - FAILED
 testWaterfall7_backward  . . . . [2 pts]  - FAILED
-testWaterfall12_size . . . . . . [1 pts]  - FAILED
+testWaterfall12_size . . . . . . [1 pts]  - passed
 testWaterfall12_forward  . . . . [1 pts]  - FAILED
 testWaterfall12_backward . . . . [2 pts]  - FAILED
 testWaterfall7_memory (asan) . . [3 pts]  - FAILED
@@ -73,5 +73,5 @@ testSortNlogN  . . . . . . . . . [10 pts] - FAILED
 
 Total score...
 ================================================================
-TOTAL SCORE: 0
+TOTAL SCORE: 8
 
