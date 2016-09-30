@@ -1,8 +1,8 @@
-Grading r21949 by dzhang55 committed on Wed Sep 28 17:09:46 CDT 2016
+Grading r22389 by enx-cs225autograder committed on Thu Sep 29 02:34:37 CDT 2016
 Monad Autograder
-Testing mp3 at 2016-09-29 00:41:22
+Testing mp3 at 2016-09-30 00:44:45
 
-"To iterate is human, to recurse divine." ~ L. Peter Deutsch
+"Honestly, if you don't fit in, then you're probably doing the right thing." ~ LIGHTS
 
 Setting up test environment...
 Compiling...
