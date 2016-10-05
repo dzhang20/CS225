@@ -4,19 +4,19 @@ Exam report for Ding Zhang
 Scores
 ------
 
-  Problem                   Points
-  ----------------------- --------
-  constructors-2a                4
-  constructors-3a                4
-  km-arrays-1c                   0
-  km-declarationopts-2a          0
-  km-firstclass-1c               4
-  km-makefile-2b                 4
-  km-pointersintro-2c            4
-  passbyvalue-5a                 4
-  rtriangle                     18
+  Problem                      Points
+  ----------------------- -----------
+  constructors-2a            4.000000
+  constructors-3a            4.000000
+  km-arrays-1c               0.000000
+  km-firstclass-1c           4.000000
+  km-pointersintro-2c        4.000000
+  passbyvalue-5a             4.000000
+  km-declarationopts-2a      2.666667
+  km-makefile-2b             4.000000
+  rtriangle                 18.000000
 
-Total score: 42/50 (84%)
+Total score: 44.6666667/50 (89.3333333%)
 
 Code Problem Test Output
 ------------------------
