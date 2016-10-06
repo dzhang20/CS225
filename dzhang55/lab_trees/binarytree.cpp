@@ -76,7 +76,18 @@ void BinaryTree<T>::printLeftToRight(const Node* subRoot) const
 template <typename T>
 void BinaryTree<T>::mirror()
 {
-    // your code here
+	mirror(root);
+}
+
+template <typename T>
+void BinaryTree<T>::mirror( Node* subRoot){
+	if(subRoot==NULL)
+		return;
+	Node* temp = subRoot->left;
+	subRoot->left=subRoot->right;
+	subRoot->right=temp;
+	mirror(subRoot->left);
+	mirror(subRoot->right);
 }
 
 
@@ -89,10 +100,24 @@ template <typename T>
 bool BinaryTree<T>::isOrdered() const
 {
     // your code here
-    return false;
+    Node* temp = root;
+    while(temp->left!=NULL)
+	temp=temp->left;
+    return isOrdered(root,temp->elem,true);
 }
 
-
+template <typename T>
+bool BinaryTree<T>::isOrdered(Node* subRoot,T element,bool checker)const{
+	if(subRoot==NULL)
+		return true;
+	checker=checker&&isOrdered(subRoot->left,element,checker);
+	if(element>subRoot->elem)
+		checker=false;
+	element=subRoot->elem;
+	checker=checker&&isOrdered(subRoot->right,element,checker);
+	return checker;
+	
+}
 /**
  * Prints out all the possible paths from the root of the tree to any leaf node.
  * That is, all sequences starting at the root node and continuing downwards,
@@ -102,7 +127,25 @@ bool BinaryTree<T>::isOrdered() const
 template <typename T>
 void BinaryTree<T>::printPaths() const
 {
-    // your code here
+	T* arr = new T[1000000];
+    printPaths(root,0,arr);
+}
+
+template <typename T>
+void BinaryTree<T>::printPaths(Node* subRoot,int count,T* arr ) const{
+	if(subRoot==NULL)
+		return;
+	arr[count] = subRoot->elem;
+	count++;
+	if(subRoot->left==NULL&&subRoot->right==NULL){
+		cout<<"Path:";
+		for(int i = 0;i<count;i++)
+			cout<<" "<<arr[i];
+		cout<<endl;
+	}
+	printPaths(subRoot->left,count,arr);
+	printPaths(subRoot->right,count,arr);
+	
 }
 
 
