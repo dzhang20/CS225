@@ -146,6 +146,8 @@ class BinaryTree
 	void mirror( Node* subRoot);
 	bool isOrdered(Node* subRoot,T element,bool checker) const;
 	void printPaths(Node* subRoot,int count,T* arr) const;
+	int sumDistances(const Node* subRoot,int sum)const;
+
     /**
      * Private helper function for the public height function.
      * @param subRoot The current node in the recursion
