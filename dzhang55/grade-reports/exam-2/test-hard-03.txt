@@ -1,0 +1,51 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam2-grading/submissions/dzhang55
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts
+qid is hard-03
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts/tests/hard-03/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam2-grading/submissions/dzhang55/grade-.1Au
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o hard.o hard.cpp
+hard.cpp: In function ‘void llUnion(LinkedList*, LinkedList*, LinkedList*)’:
+hard.cpp:7:13: error: declaration of ‘LinkedList unn’ shadows a parameter
+  LinkedList unn;
+             ^~~
+hard.cpp:12:2: error: expected ‘(’ before ‘while’
+  while((*lst1).head!=NULL&&(*lst2)!=NULL){
+  ^~~~~
+hard.cpp:12:2: error: expected primary-expression before ‘while’
+hard.cpp:14:2: error: expected primary-expression before ‘return’
+  return;
+  ^~~~~~
+hard.cpp:14:2: error: expected ‘;’ before ‘return’
+hard.cpp:14:2: error: expected primary-expression before ‘return’
+hard.cpp:14:2: error: expected ‘)’ before ‘return’
+hard.cpp:8:6: warning: unused variable ‘max’ [-Wunused-variable]
+  int max = 0;
+      ^~~
+hard.cpp:15:1: error: expected ‘}’ at end of input
+ }
+ ^
+hard.cpp:5:24: warning: unused parameter ‘unn’ [-Wunused-parameter]
+            LinkedList* unn)
+                        ^~~
+<builtin>: recipe for target 'hard.o' failed
+make: *** [hard.o] Error 1
+Could not compile hard.o.
+
+Grade for question : 0/100
+
+
+~ ~ ~
+
+Grade: 0
+
+Details:
+test,grade
+_compiled,0
