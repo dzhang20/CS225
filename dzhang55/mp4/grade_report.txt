@@ -1,8 +1,8 @@
-Grading r30880 by enx-cs225autograder committed on Wed Oct 12 02:22:54 CDT 2016
+Grading r31411 by enx-cs225autograder committed on Thu Oct 13 02:37:19 CDT 2016
 Monad Autograder
-Testing mp4 at 2016-10-13 00:43:24
+Testing mp4 at 2016-10-14 00:39:21
 
-"I think Microsoft named .NET so it wouldn't show up in a Unix directory listing." ~ Oktal
+"Don't worry about people stealing your ideas. If your ideas are any good, you'll have to ram them down people's throats." ~ Howard H. Aiken
 
 Setting up test environment...
 Compiling...
