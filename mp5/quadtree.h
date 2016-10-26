@@ -45,16 +45,16 @@ class Quadtree
         RGBAPixel element; /**< the pixel stored as this node's "data" */
 	int x_coord;
 	int y_coord;
-	int resol;
     };
 	//helper functions
+	//
 	QuadtreeNode* copy(QuadtreeNode* subRoot);
 	void clear(QuadtreeNode* subRoot)const;
 	QuadtreeNode* buildTree(PNG const& source,int x,int y,int resolution)const;
 	RGBAPixel getPixel(int x,int y,int nx,int ny,int resolution,QuadtreeNode* subRoot)const;
 
     QuadtreeNode* root; /**< pointer to root of quadtree */
-
+    int resol;
 /**** Functions for testing/grading                      ****/
 /**** Do not remove this line or copy its contents here! ****/
 #include "quadtree_given.h"

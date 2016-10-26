@@ -8,13 +8,18 @@
 #include <cmath>
 using namespace std;
 
-Quadtree::Quadtree(){root=NULL;}
+Quadtree::Quadtree(){
+	root=NULL;
+	resol=0;
+}
 Quadtree::Quadtree(const PNG& source, int resolution){
 	root=NULL;
+	resol=resolution;
 	buildTree(source,resolution);
 }
 
 Quadtree::Quadtree(Quadtree const& other){
+	resol=other.resol;
 	root=copy(other.root);
 }
 
@@ -32,32 +37,33 @@ Quadtree::QuadtreeNode* Quadtree::copy(QuadtreeNode* subRoot){
 }
 
 Quadtree::~Quadtree(){
-	if(root!=NULL)
-		clear(root);
+	clear(root);
+	root=NULL;
 }
 
 //helper function-- clear
 void Quadtree::clear(QuadtreeNode* subRoot)const{
 	if(subRoot==NULL)
 		return;
-	clear(subRoot->nwChild);
 	clear(subRoot->neChild);
-	clear(subRoot->swChild);
+	clear(subRoot->nwChild);
 	clear(subRoot->seChild);
+	clear(subRoot->swChild);
 	delete subRoot;
 	subRoot=NULL;
 }
 
 Quadtree const& Quadtree::operator=(Quadtree const& other){
-	if((*this)==other)
+	if(root==other.root)
 		return *this;
-	clear(this->root);
+	clear(root);
 	root=copy(other.root);
 	return *this;
 }
 
 void Quadtree::buildTree(PNG const& source, int resolution){
 	clear(root);
+	resol=resolution;
 	root=buildTree(source,0,0,resolution);
 }
 
@@ -70,7 +76,6 @@ Quadtree::QuadtreeNode* Quadtree::buildTree(PNG const& source,int x,int y,int re
 		subRoot->neChild=NULL;
 		subRoot->swChild=NULL;
 		subRoot->seChild=NULL;
-		subRoot->resol=resolution;
 		return subRoot;
 	}
 	QuadtreeNode* subRoot=new QuadtreeNode();
@@ -82,37 +87,38 @@ Quadtree::QuadtreeNode* Quadtree::buildTree(PNG const& source,int x,int y,int re
 	subRoot->element.red=(subRoot->nwChild->element.red+subRoot->neChild->element.red+subRoot->swChild->element.red+subRoot->seChild->element.red)/4;
 	subRoot->element.green=(subRoot->nwChild->element.green+subRoot->neChild->element.green+subRoot->swChild->element.green+subRoot->seChild->element.green)/4;
 	subRoot->element.blue=(subRoot->nwChild->element.blue+subRoot->neChild->element.blue+subRoot->swChild->element.blue+subRoot->seChild->element.blue)/4;
-	subRoot->resol=resolution;
 	return subRoot;
 }
 
 RGBAPixel Quadtree::getPixel(int x, int y) const{
-	if(x>=root->x_coord||y>=root->y_coord||root==NULL||x<0||y<0)
+	if(x>=resol||y>=resol||resol==0)
 		return RGBAPixel();
-	return getPixel(x,y,0,0,root->resol,root);
+	return getPixel(x,y,0,0,resol,root);
 }
 
 //helper function
 RGBAPixel Quadtree::getPixel(int x,int y,int nx,int ny,int resolution,QuadtreeNode* subRoot)const{
-	if(subRoot->nwChild||subRoot->neChild||subRoot->swChild||subRoot->seChild){
+	if(subRoot->nwChild==NULL){
 		return subRoot->element;
 	}
-	if(x<nx+resolution/2&&y<ny+resolution/2)
+	if((x<nx+resolution/2)&&(y<ny+resolution/2))
 		return getPixel(x,y,nx,ny,resolution/2,subRoot->nwChild);
 	else if((x>=nx+resolution/2)&&(y<ny+resolution/2))
 		return getPixel(x,y,nx+resolution/2,ny,resolution/2,subRoot->neChild);
 	else if((x<nx+resolution/2)&&(y>=ny+resolution/2))
 		return getPixel(x,y,nx,ny+resolution/2,resolution/2,subRoot->swChild);
-	else
+	else if(x>=nx+resolution/2&&y>=ny+resolution/2)
 		return getPixel(x,y,nx+resolution/2,ny+resolution/2,resolution/2,subRoot->seChild);
+	else
+		return RGBAPixel();
 }
 
 PNG Quadtree::decompress() const{
 	if(root==NULL)
-		return *(new PNG());
-	PNG ret(root->resol,root->resol);
-        for(int i=0;i<root->resol;i++){
-                for(int j=0;j<root->resol;j++){
+		return PNG();
+	PNG ret(resol,resol);
+        for(int i=0;i<resol;i++){
+                for(int j=0;j<resol;j++){
                        *ret(i,j)=getPixel(i,j);
                 }
         }
