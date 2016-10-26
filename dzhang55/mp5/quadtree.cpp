@@ -38,7 +38,6 @@ Quadtree::QuadtreeNode* Quadtree::copy(QuadtreeNode* subRoot){
 
 Quadtree::~Quadtree(){
 	clear(root);
-	root=NULL;
 }
 
 //helper function-- clear
@@ -57,6 +56,7 @@ Quadtree const& Quadtree::operator=(Quadtree const& other){
 	if(root==other.root)
 		return *this;
 	clear(root);
+	resol=other.resol;
 	root=copy(other.root);
 	return *this;
 }
@@ -91,26 +91,25 @@ Quadtree::QuadtreeNode* Quadtree::buildTree(PNG const& source,int x,int y,int re
 }
 
 RGBAPixel Quadtree::getPixel(int x, int y) const{
-	if(x>=resol||y>=resol||resol==0)
+	if(x>=resol||y>=resol||root==NULL)
 		return RGBAPixel();
 	return getPixel(x,y,0,0,resol,root);
 }
 
 //helper function
-RGBAPixel Quadtree::getPixel(int x,int y,int nx,int ny,int resolution,QuadtreeNode* subRoot)const{
+RGBAPixel Quadtree::getPixel(int x,int y,int a,int b,int resolution,QuadtreeNode* subRoot)const{
 	if(subRoot->nwChild==NULL){
 		return subRoot->element;
 	}
-	if((x<nx+resolution/2)&&(y<ny+resolution/2))
-		return getPixel(x,y,nx,ny,resolution/2,subRoot->nwChild);
-	else if((x>=nx+resolution/2)&&(y<ny+resolution/2))
-		return getPixel(x,y,nx+resolution/2,ny,resolution/2,subRoot->neChild);
-	else if((x<nx+resolution/2)&&(y>=ny+resolution/2))
-		return getPixel(x,y,nx,ny+resolution/2,resolution/2,subRoot->swChild);
-	else if(x>=nx+resolution/2&&y>=ny+resolution/2)
-		return getPixel(x,y,nx+resolution/2,ny+resolution/2,resolution/2,subRoot->seChild);
+	if((x<a+resolution/2)&&(y<b+resolution/2))
+		return getPixel(x,y,a,b,resolution/2,subRoot->nwChild);
+	else if((x>=a+resolution/2)&&(y<b+resolution/2))
+		return getPixel(x,y,a+resolution/2,b,resolution/2,subRoot->neChild);
+	else if((x<a+resolution/2)&&(y>=b+resolution/2))
+		return getPixel(x,y,a,b+resolution/2,resolution/2,subRoot->swChild);
 	else
-		return RGBAPixel();
+		return getPixel(x,y,a+resolution/2,b+resolution/2,resolution/2,subRoot->seChild);
+
 }
 
 PNG Quadtree::decompress() const{

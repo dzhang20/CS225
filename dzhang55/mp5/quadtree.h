@@ -51,7 +51,7 @@ class Quadtree
 	QuadtreeNode* copy(QuadtreeNode* subRoot);
 	void clear(QuadtreeNode* subRoot)const;
 	QuadtreeNode* buildTree(PNG const& source,int x,int y,int resolution)const;
-	RGBAPixel getPixel(int x,int y,int nx,int ny,int resolution,QuadtreeNode* subRoot)const;
+	RGBAPixel getPixel(int x,int y,int a,int b,int resolution,QuadtreeNode* subRoot)const;
 
     QuadtreeNode* root; /**< pointer to root of quadtree */
     int resol;
