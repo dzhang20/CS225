@@ -1,8 +1,8 @@
-Grading r39080 by dzhang55 committed on Wed Oct 26 02:19:29 CDT 2016
+Grading r39265 by enx-cs225autograder committed on Thu Oct 27 02:06:18 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-10-27 00:27:29
+Testing mp5 at 2016-10-28 00:26:58
 
-"I hope this code makes sense when I wake up." ~ Jason Cho
+"The most amazing achievement of the computer software industry is its continuing cancellation of the steady and staggering gains made by the computer hardware industry." ~ Henry Petroski
 
 Setting up test environment...
 Compiling...
