@@ -1,8 +1,8 @@
-Grading r39265 by enx-cs225autograder committed on Thu Oct 27 02:06:18 CDT 2016
+Grading r39737 by enx-cs225autograder committed on Fri Oct 28 01:55:22 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-10-28 00:26:58
+Testing mp5 at 2016-10-29 00:25:50
 
-"The most amazing achievement of the computer software industry is its continuing cancellation of the steady and staggering gains made by the computer hardware industry." ~ Henry Petroski
+"Now that's just math for math's sake." ~ Prof. Julia Hockenmaier
 
 Setting up test environment...
 Compiling...
