@@ -200,7 +200,9 @@ class AVLTree
      * @param subRoot The current node in the recursion
      */
     void clear(Node* subRoot);
-
+    
+    //helper function
+    int balance(Node*& subtree);
     /** This variable is used for grading. */
     ostream* _out;
 };
