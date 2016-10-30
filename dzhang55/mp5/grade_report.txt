@@ -1,8 +1,8 @@
-Grading r39737 by enx-cs225autograder committed on Fri Oct 28 01:55:22 CDT 2016
+Grading r40302 by enx-cs225autograder committed on Sat Oct 29 02:09:57 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-10-29 00:25:50
+Testing mp5 at 2016-10-30 00:25:34
 
-"Now that's just math for math's sake." ~ Prof. Julia Hockenmaier
+"**** ******** **** nickels!!!" ~ Chase Geigle
 
 Setting up test environment...
 Compiling...
