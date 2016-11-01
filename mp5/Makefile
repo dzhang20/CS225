@@ -9,7 +9,7 @@ CXX = clang++
 LD = clang++
 WARNINGS = -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable
 CXXFLAGS = -std=c++1y -stdlib=libc++ -g -O0 $(WARNINGS) -MMD -MP -c
-LDFLAGS = -std=c++1y -stdlib=libc++ -lpng -lc++abi -lpthread
+LDFLAGS = -std=c++1y -stdlib=libc++ -lpng -lc++abi -lpthread -g -O0
 ASANFLAGS = -fsanitize=address -fno-omit-frame-pointer
 
 all: $(EXE) $(EXE)-asan
