@@ -1,0 +1,305 @@
+Grading r47386 by dzhang55 committed on Sun Nov  6 23:04:03 CST 2016
+Monad Autograder
+Testing lab_btree at 2016-11-07 00:25:32
+
+"Any sufficiently advanced bug is indistinguishable from a feature." ~ Rich Kulawiec
+
+Setting up test environment...
+Compiling...
+================================================================
+In file included from unit_tests.cpp:2:
+In file included from ./btree.h:377:
+./btree.cpp:176:14: error: no matching constructor for initialization of 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::BTreeNode'
+        subroot=new BTreeNode(pair.key,pair.value);
+                    ^         ~~~~~~~~~~~~~~~~~~~
+./btree.cpp:69:5: note: in instantiation of member function 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::insert' requested here
+    insert(root, DataPair(key, value));
+    ^
+unit_tests.cpp:47:11: note: in instantiation of member function 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::insert' requested here
+        b.insert(key_val.first, key_val.second);
+          ^
+unit_tests.cpp:207:5: note: in instantiation of function template specialization 'do_inserts<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >' requested here
+    do_inserts(data, b);
+    ^
+./btree.h:166:9: note: candidate constructor not viable: no known conversion from 'const std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >' to 'bool' for 1st argument
+        BTreeNode(bool is_leaf, unsigned int order) : is_leaf(is_leaf)
+        ^
+./btree.h:176:9: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+        BTreeNode(const BTreeNode& other)
+        ^
+1 error generated.
+In file included from unit_tests.cpp:2:
+In file included from ./btree.h:377:
+./btree.cpp:176:14: error: no matching constructor for initialization of 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::BTreeNode'
+        subroot=new BTreeNode(pair.key,pair.value);
+                    ^         ~~~~~~~~~~~~~~~~~~~
+./btree.cpp:69:5: note: in instantiation of member function 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::insert' requested here
+    insert(root, DataPair(key, value));
+    ^
+unit_tests.cpp:47:11: note: in instantiation of member function 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::insert' requested here
+        b.insert(key_val.first, key_val.second);
+          ^
+unit_tests.cpp:207:5: note: in instantiation of function template specialization 'do_inserts<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >' requested here
+    do_inserts(data, b);
+    ^
+./btree.h:166:9: note: candidate constructor not viable: no known conversion from 'const std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >' to 'bool' for 1st argument
+        BTreeNode(bool is_leaf, unsigned int order) : is_leaf(is_leaf)
+        ^
+./btree.h:176:9: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+        BTreeNode(const BTreeNode& other)
+        ^
+1 error generated.
+In file included from unit_tests.cpp:2:
+In file included from ./btree.h:377:
+./btree.cpp:176:14: error: no matching constructor for initialization of 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::BTreeNode'
+        subroot=new BTreeNode(pair.key,pair.value);
+                    ^         ~~~~~~~~~~~~~~~~~~~
+./btree.cpp:69:5: note: in instantiation of member function 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::insert' requested here
+    insert(root, DataPair(key, value));
+    ^
+unit_tests.cpp:47:11: note: in instantiation of member function 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::insert' requested here
+        b.insert(key_val.first, key_val.second);
+          ^
+unit_tests.cpp:207:5: note: in instantiation of function template specialization 'do_inserts<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >' requested here
+    do_inserts(data, b);
+    ^
+./btree.h:166:9: note: candidate constructor not viable: no known conversion from 'const std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >' to 'bool' for 1st argument
+        BTreeNode(bool is_leaf, unsigned int order) : is_leaf(is_leaf)
+        ^
+./btree.h:176:9: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+        BTreeNode(const BTreeNode& other)
+        ^
+1 error generated.
+unit_tests.o.1: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.1: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x920): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.1: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0xe30): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.1:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+unit_tests.o.2: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.2: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0xd60): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.2: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x1270): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.2:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+unit_tests.o.3: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.3: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x6f0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.3: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0xc00): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.3:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+unit_tests.o.4: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.4: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x6f0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.4: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0xc00): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.4:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+unit_tests.o.5: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.5: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x6f0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.5: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0xc00): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.5:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+unit_tests.o.6: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.6: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x6f0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.6: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0xc00): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.6:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+unit_tests.o.7: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.7: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x6f0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.7: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0xc00): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.7:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+unit_tests.o.8: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.8: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x6f0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.8: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0xc00): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.8:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+unit_tests.o.9: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests.o.9: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x6f0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests.o.0:unit_tests.cpp:(.text+0x6f0): first defined here
+unit_tests.o.9: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0xc00): multiple definition of `vec_gen(unsigned long)'
+unit_tests.o.0:unit_tests.cpp:(.text+0xc00): first defined here
+unit_tests.o.9:(.bss+0x0): multiple definition of `vecs'
+unit_tests.o.0:(.bss+0x0): first defined here
+clang-3.5: error: no such file or directory: 'unit_tests.o'
+make: *** [proxy] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from unit_tests.cpp:2:
+In file included from ./btree.h:377:
+./btree.cpp:176:14: error: no matching constructor for initialization of 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::BTreeNode'
+        subroot=new BTreeNode(pair.key,pair.value);
+                    ^         ~~~~~~~~~~~~~~~~~~~
+./btree.cpp:69:5: note: in instantiation of member function 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::insert' requested here
+    insert(root, DataPair(key, value));
+    ^
+unit_tests.cpp:47:11: note: in instantiation of member function 'BTree<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >::insert' requested here
+        b.insert(key_val.first, key_val.second);
+          ^
+unit_tests.cpp:207:5: note: in instantiation of function template specialization 'do_inserts<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >' requested here
+    do_inserts(data, b);
+    ^
+./btree.h:166:9: note: candidate constructor not viable: no known conversion from 'const std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >' to 'bool' for 1st argument
+        BTreeNode(bool is_leaf, unsigned int order) : is_leaf(is_leaf)
+        ^
+./btree.h:176:9: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+        BTreeNode(const BTreeNode& other)
+        ^
+1 error generated.
+unit_tests-asan.o.1: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.1: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x4260): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.1: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x5ac0): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.1:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+unit_tests-asan.o.2: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.2: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x5710): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.2: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x6f70): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.2:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+unit_tests-asan.o.3: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.3: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x34a0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.3: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x4d00): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.3:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+unit_tests-asan.o.4: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.4: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x34a0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.4: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x4d00): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.4:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+unit_tests-asan.o.5: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.5: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x34a0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.5: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x4d00): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.5:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+unit_tests-asan.o.6: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.6: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x34a0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.6: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x4d00): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.6:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+unit_tests-asan.o.7: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.7: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x34a0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.7: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x4d00): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.7:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+unit_tests-asan.o.8: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.8: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x34a0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.8: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x4d00): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.8:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+unit_tests-asan.o.9: In function `make_int_data(int, bool)':
+unit_tests.cpp:(.text+0x0): multiple definition of `make_int_data(int, bool)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x0): first defined here
+unit_tests-asan.o.9: In function `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)':
+unit_tests.cpp:(.text+0x34a0): multiple definition of `insertion_idx_time(std::__1::vector<int, std::__1::allocator<int> >*)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x34a0): first defined here
+unit_tests-asan.o.9: In function `vec_gen(unsigned long)':
+unit_tests.cpp:(.text+0x4d00): multiple definition of `vec_gen(unsigned long)'
+unit_tests-asan.o.0:unit_tests.cpp:(.text+0x4d00): first defined here
+unit_tests-asan.o.9:(.bss+0x0): multiple definition of `vecs'
+unit_tests-asan.o.0:(.bss+0x0): first defined here
+
+
+Running tests...
+================================================================
+Could not execute test cases
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+
