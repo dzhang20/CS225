@@ -20,6 +20,7 @@
 #include <vector>
 #include "coloredout.h"
 #include "point.h"
+#include <cmath>
 
 using std::vector;
 using std::string;
@@ -247,7 +248,11 @@ class KDTree
     /**
      * @todo Add your helper functions here.
      */
-
+	//buildKDTree helper
+    void quicksort(vector<Point<Dim>>& point,int left,int right, int Dimension);
+    Point<Dim> findmedian(vector<Point<Dim>>& point, int left, int right,int mid,int Dimension);
+    int partition(vector<Point<Dim>>& point, int left,int right,int mid,int Dimension);
+    Point<Dim> findNeighbor(const Point<Dim>& query,const vector<Point<Dim>>& point,int left, int right,int Dimension)const;
 };
 
 #include "kdtree.cpp"
