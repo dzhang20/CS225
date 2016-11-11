@@ -1,8 +1,8 @@
-Grading r48833 by enx-cs225autograder committed on Wed Nov  9 00:33:43 CST 2016
+Grading r48926 by enx-cs225autograder committed on Thu Nov 10 00:41:49 CST 2016
 Monad Autograder
-Testing mp6 at 2016-11-10 00:20:36
+Testing mp6 at 2016-11-11 00:18:28
 
-"Microsoft has a new version out, Windows XP, which according to everybody is the 'most reliable Windows ever.' To me, this is like saying that asparagus is 'the most articulate vegetable ever.'" ~ Dave Barry
+"If you don't hand in the next homework, you might miss some points." ~ Prof. Jiawei Han
 
 Setting up test environment...
 Compiling...
