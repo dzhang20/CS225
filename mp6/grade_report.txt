@@ -1,8 +1,8 @@
-Grading r48926 by enx-cs225autograder committed on Thu Nov 10 00:41:49 CST 2016
+Grading r49302 by enx-cs225autograder committed on Fri Nov 11 00:43:36 CST 2016
 Monad Autograder
-Testing mp6 at 2016-11-11 00:18:28
+Testing mp6 at 2016-11-12 00:19:35
 
-"If you don't hand in the next homework, you might miss some points." ~ Prof. Jiawei Han
+"Television won't be able to hold on to any market it captures after the first six months. People will soon get tired of staring at a plywood box every night." ~ Darryl Zanuck, 20th Century Fox, 1946
 
 Setting up test environment...
 Compiling...
