@@ -1,8 +1,8 @@
-Grading r49302 by enx-cs225autograder committed on Fri Nov 11 00:43:36 CST 2016
+Grading r49760 by enx-cs225autograder committed on Sat Nov 12 00:40:13 CST 2016
 Monad Autograder
-Testing mp6 at 2016-11-12 00:19:35
+Testing mp6 at 2016-11-13 00:16:16
 
-"Television won't be able to hold on to any market it captures after the first six months. People will soon get tired of staring at a plywood box every night." ~ Darryl Zanuck, 20th Century Fox, 1946
+"Computers are like Old Testament gods; lots of rules and no mercy." ~ Joseph Campbell
 
 Setting up test environment...
 Compiling...
