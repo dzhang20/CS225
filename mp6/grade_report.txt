@@ -1,8 +1,8 @@
-Grading r49760 by enx-cs225autograder committed on Sat Nov 12 00:40:13 CST 2016
+Grading r50233 by enx-cs225autograder committed on Sun Nov 13 00:37:34 CST 2016
 Monad Autograder
-Testing mp6 at 2016-11-13 00:16:16
+Testing mp6 at 2016-11-14 00:45:46
 
-"Computers are like Old Testament gods; lots of rules and no mercy." ~ Joseph Campbell
+"Eighty percent of success is showing up." ~ Woody Allen
 
 Setting up test environment...
 Compiling...
