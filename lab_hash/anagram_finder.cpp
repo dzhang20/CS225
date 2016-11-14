@@ -56,15 +56,15 @@ bool AnagramFinder<Dict>::checkWord(const string& word, const string& test)
      */
     if(word.length()!=test.length())
 	return false;
-    Dict<char,int> wordTable(255);
-    Dict<char,int> testTable(255);
+    Dict<char,int> wordTable(256);
+    Dict<char,int> testTable(256);
     for(size_t i=0;i<word.length();i++){
 	wordTable[word[i]]++;
 	testTable[test[i]]++;
     }
     typename Dict<char,int>::iterator it1=wordTable.begin();
     typename Dict<char,int>::iterator it2=testTable.begin();
-    for(size_t i=0;i<255;i++){
+    for(size_t i=0;i<256;i++){
 	if(wordTable[i]!=testTable[i])
 		return false;
     }
