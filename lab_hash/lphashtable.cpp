@@ -88,11 +88,12 @@ void LPHashTable<K, V>::insert(K const& key, V const& value)
     elems++;
     if(double(elems/size)>=0.7)
 	resizeTable();
-    pair<K,V> p(key,value);
+    pair<K,V>* p=new pair<K,V>(key,value);
     size_t index=hash(key,size);
     while(table[index]!=NULL)
 	index++;
-    table[index]=&p;
+    table[index]=p;
+    should_probe[index]=true;
 }
 
 template <class K, class V>
