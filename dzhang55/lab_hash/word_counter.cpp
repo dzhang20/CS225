@@ -27,12 +27,17 @@ vector<pair<string, int>> WordFreq<Dict>::getWords(int threshold) const
 {
     TextFile infile(filename);
     vector<pair<string, int>> ret;
+    Dict<string, int> dic(9999999);
     /**
      * @todo Implement this function.
      * @see char_counter.cpp if you're having trouble.
      */
-
-    (void) threshold; // prevent warnings... When you implement this function, remove this line.
-
+    while(infile.good()){
+	string w=infile.getNextWord();
+	dic[w]++;
+    }
+    for(auto it=dic.begin();it!=dic.end();it++)
+	if(it->second>=threshold)
+		ret.push_back(*it);
     return ret;
 }

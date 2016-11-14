@@ -77,9 +77,11 @@ void SCHashTable<K, V>::remove(K const& key)
      */
     if(keyExists(key)){
     	size_t index=hash(key,size);
-    	for(auto it=table[index].begin();it!=table[index].end();it++){
-		if(it->first==key)
+    	for(it=table[index].begin();it!=table[index].end();it++){
+		if(it->first==key){
 			table[index].erase(it);
+			break;
+		}
     	}
     	elems--;
     }
@@ -150,14 +152,18 @@ void SCHashTable<K, V>::resizeTable()
      *
      * @hint Use findPrime()!
      */
+
     size_t newSize=findPrime(2*size);
-    size=newSize;
-    SCHashTable temp(newSize);
+    size_t index=0;
+    std::list<std::pair<K,V>>* tempT= new list<pair<K,V>>[newSize];
     for(size_t i=0;i<size;i++){
-	for(auto it=table[i].begin();it!=table[i].end();it++){
-		temp.insert(it->first,it->second);
+	for(it=table[i].begin();it!=table[i].end();it++){
+		index=hash(it->first,newSize);
+		pair<K,V> t(it->first,it->second);
+		tempT[index].push_back(t);
 	}
     }
     delete[] table;
-    *this=temp;
+    table=tempT;
+    size=newSize;
 }
