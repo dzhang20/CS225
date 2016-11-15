@@ -1,8 +1,8 @@
-Grading r50233 by enx-cs225autograder committed on Sun Nov 13 00:37:34 CST 2016
+Grading r51379 by enx-cs225autograder committed on Mon Nov 14 01:12:11 CST 2016
 Monad Autograder
-Testing mp6 at 2016-11-14 00:45:46
+Testing mp6 at 2016-11-15 00:18:45
 
-"Eighty percent of success is showing up." ~ Woody Allen
+"If I had a 3D Reese's chocolate printer I would use that thing all the time always." ~ Chase Geigle
 
 Setting up test environment...
 Compiling...
