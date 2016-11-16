@@ -249,10 +249,10 @@ class KDTree
      * @todo Add your helper functions here.
      */
 	//buildKDTree helper
-    void quicksort(vector<Point<Dim>>& point,int left,int right, int Dimension);
-    Point<Dim> findmedian(vector<Point<Dim>>& point, int left, int right,int mid,int Dimension);
-    int partition(vector<Point<Dim>>& point, int left,int right,int mid,int Dimension);
-    Point<Dim> findNeighbor(const Point<Dim>& query,const vector<Point<Dim>>& point,int left, int right,int Dimension)const;
+    void quicksort(int left,int right, int Dimension);
+    int partition(int left,int right,int Dimension);
+    void sort(int left, int right, int mid, int Dimension);
+    Point<Dim> findNeighbor(const Point<Dim>& query,const Point<Dim>& curBest,int left, int right,int Dimension)const;
 };
 
 #include "kdtree.cpp"
