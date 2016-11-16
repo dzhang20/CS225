@@ -42,48 +42,48 @@ KDTree<Dim>::KDTree(const vector<Point<Dim>>& newPoints)
      * @todo Implement this function!
      */
 	points=newPoints;		
-	quicksort(points,0,newPoints.size()-1,0);
+	quicksort(0,points.size()-1,0);
 }
 
 template <int Dim>
-void KDTree<Dim>::quicksort(vector<Point<Dim>>& point, int left,int right,int Dimension){
+void KDTree<Dim>::quicksort(int left,int right,int Dimension){
 	if(left>right)
-		return;
-	points[(left+right)/2]=findmedian(point,left,right,(left+right)/2,Dimension);
-	quicksort(point,left,(left+right)/2-1,(Dimension+1)%Dim);
-	quicksort(point,(left+right)/2+1,right,(Dimension+1)%Dim);
-}
-
-template <int Dim>
-Point<Dim> KDTree<Dim>::findmedian(vector<Point<Dim>>& point,int left,int right,int mid,int Dimension){
-	while(left<right){
-		int pivo=partition(point,left,right,(right+left)/2,Dimension);
-		if(pivo==mid)
-			return point[pivo];
-		else if(mid>pivo)
-			left=pivo+1;
-		else
-			right=pivo-1;
+		return;	
+	sort(left,right,(left+right)/2,Dimension);
+	quicksort(left,(left+right)/2-1,(Dimension+1)%Dim);
+	quicksort((left+right)/2+1,right,(Dimension+1)%Dim);
 	
-	}
-	return point[left];
 }
 
 template <int Dim>
-int KDTree<Dim>::partition(vector<Point<Dim>>& point,int left, int right,int mid, int Dimension){
-	Point<Dim> Val=point[mid];
+void KDTree<Dim>::sort(int left,int right,int mid,int Dimension){
+	while(left<right){
+		int pivot=partition(left,right,Dimension);
+		if(pivot==mid)
+			return ;
+		else if(pivot>mid)
+			right=pivot-1;
+		else
+			left=pivot+1;
+	}
+
+}
+
+template <int Dim>
+int KDTree<Dim>::partition(int left, int right, int Dimension){
+	Point<Dim> pivot=points[right];
 	int index=left;
 	for(int i=left;i<right;i++){
-		if(smallerDimVal(point[i],Val,Dimension)){
-			Point<Dim> temp=point[index];
-			point[index]=point[i];
-			point[i]=temp;
+		if(smallerDimVal(points[i],pivot,Dimension)||points[i]==pivot){
+			Point<Dim> temp=points[index];
+			points[index]=points[i];
+			points[i]=temp;
 			index++;
 		}
 	}
-	Point<Dim> temp2=point[index];
-	point[index]=point[right];
-	point[right]=temp2;
+	Point<Dim> temp2=points[right];
+	points[right]=points[index];
+	points[index]=temp2;
 	return index;
 }
 
@@ -93,34 +93,38 @@ Point<Dim> KDTree<Dim>::findNearestNeighbor(const Point<Dim>& query) const
     /**
      * @todo Implement this function!
      */
-    return findNeighbor(query,points,0,points.size()-1,0);
+    return findNeighbor(query,points[(points.size()-1)/2],0,points.size()-1,0);
 }
 
 template <int Dim>
-Point<Dim> KDTree<Dim>::findNeighbor(const Point<Dim>& query,const vector<Point<Dim>>& point, int left, int right, int Dimension)const{
-	if(left>=right)
-		return point[left];
-	Point<Dim> temp=point[(left+right)/2];
-	Point<Dim> curBest;
-	if(smallerDimVal(query,temp,Dimension))
-		 curBest=findNeighbor(query,point,left,(left+right)/2-1,(Dimension+1)%Dim);
-	else
-		curBest=findNeighbor(query,point,(left+right)/2+1,right,(Dimension+1)%Dim);
-	if(shouldReplace(query,curBest,temp)){
-		curBest=temp;
-		Point<Dim> temp2;
-		if(smallerDimVal(query,temp,Dimension))
-			temp2=findNeighbor(query,point,(left+right)/2+1,right,(Dimension+1)%Dim);
-		else
-			temp2=findNeighbor(query,point,left,(left+right)/2-1,(Dimension+1)%Dim);
-		if(shouldReplace(query,curBest,temp2))
-			curBest=temp2;
+Point<Dim> KDTree<Dim>::findNeighbor(const Point<Dim>& query,const Point<Dim>& curBest, int left, int right, int Dimension)const{
+	Point<Dim> temp=curBest;
+	if(left==right){
+		if(shouldReplace(query,curBest,points[left]))
+			temp=points[left];
+		return temp;
 	}
-	
-	return curBest;
+	bool toLeft=true;
+	if(smallerDimVal(query,points[(left+right)/2],Dimension)&&left<(right+left)/2){
+		temp=findNeighbor(query,curBest,left,(right+left)/2-1,(Dimension+1)%Dim);
+		toLeft=true;
+	}
+	if(smallerDimVal(points[(left+right)/2],query,Dimension)&&right>(left+right)/2){
+		temp=findNeighbor(query,curBest,(left+right)/2+1,right,(Dimension+1)%Dim);
+		toLeft=false;
+	}
+	if(shouldReplace(query,temp,points[(left+right)/2]))
+		temp=points[(left+right)/2];
+	int radi =0;
+	for(int i=0;i<Dim;i++)
+		radi+=pow(temp[i]-query[i],2);
+	if(pow(points[(left+right)/2][Dimension]-query[Dimension],2)<=radi){
+		if(toLeft==true&&right>(right+left)/2){
+			temp=findNeighbor(query,temp,(left+right)/2+1,right,(Dimension+1)%Dim);	
+		}
+		if(toLeft==false&&left<(left+right)/2){
+			temp=findNeighbor(query,temp,left,(left+right)/2-1,(Dimension+1)%Dim);
+		}
+	}
+	return temp;
 }
-
-
-
-
-
