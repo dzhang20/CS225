@@ -86,7 +86,10 @@ template <class T, class Compare>
 heap<T, Compare>::heap(const std::vector<T>& elems)
 {
     /// @todo Construct a heap using the buildHeap algorithm
-	
+	for(size_t i=0;i<elems.size();i++)
+		_elems.push_back(elems[i]);
+	for(int i=parent(elems.size());i>=0;i--)
+		heapifyDown(i);	
 }
 
 template <class T, class Compare>
@@ -113,9 +116,7 @@ void heap<T, Compare>::push(const T& elem)
     /// @todo Add elem to the heap
 	_elems.push_back(elem);
 	size_t index=_elems.size()-1;
-	if(_elems[parent(index)]>_elems[index]){
-		heapifyUp(index);
-	}
+	heapifyUp(index);
 }
 
 template <class T, class Compare>
