@@ -45,7 +45,9 @@ size_t heap<T, Compare>::maxPriorityChild(size_t currentIdx) const
 {
     /// @todo Update to return the index of the child with highest priority
     ///   as defined by higherPriority()
-    if(_elems[currentIdx*2]<_elems[currentIdx*2+1])
+    if(2*currentIdx+1>=_elems.size())
+	return currentIdx*2;
+    if(higherPriority(_elems[2*currentIdx],_elems[2*currentIdx+1]))
     	return currentIdx*2;
     return currentIdx*2+1;
 }
