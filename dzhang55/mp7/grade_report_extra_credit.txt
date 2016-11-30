@@ -1,0 +1,24 @@
+Grading r55927 by dzhang55 committed on Tue Nov 29 21:33:25 CST 2016
+Monad Autograder
+Testing mp7.1 at 2016-11-30 00:21:04
+
+"Let me tell you the secret that has led me to my goal. My strength lies solely in my tenacity." ~ Louis Pasteur
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+addElements1 . . . . [20 pts] - passed
+addElements2 . . . . [20 pts] - passed
+testFindAndSetUnion1 [20 pts] - passed
+testFindAndSetUnion2 [20 pts] - passed
+testFindAndSetUnion3 [20 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
