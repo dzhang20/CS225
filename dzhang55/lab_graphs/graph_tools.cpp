@@ -26,7 +26,12 @@
 int GraphTools::findMinWeight(Graph& graph)
 {
     /* Your code here! */
-    return -1;
+    vector<Edge> ret=graph.getEdges();
+    int min=INT_MAX;
+    for(auto it=ret.begin();it!=ret.end();it++)
+	if(it->weight<min)
+		min=it->weight;
+    return min;
 }
 
 /**
@@ -53,7 +58,15 @@ int GraphTools::findMinWeight(Graph& graph)
 int GraphTools::findShortestPath(Graph& graph, Vertex start, Vertex end)
 {
     /* Your code here! */
-    return -1;
+    vector <Edge> ret=graph.getEdges();
+    vector <Vertex> vet=graph.getVertices();
+    int min=INT_MAX;
+    for(auto it=vet.begin();it!=vet.end();it++)
+	it->label="UNVISITED";
+    for(auto it=ret.begin();it!=ret.end();it++)
+	it->label="UNVISITED";
+    
+    return min;
 }
 
 /**
