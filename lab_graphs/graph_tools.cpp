@@ -6,7 +6,7 @@
  */
 
 #include "graph_tools.h"
-
+#include <map>
 /**
  * Finds the minimum edge weight in the Graph graph.
  * THIS FUNCTION IS GRADED.
@@ -28,9 +28,14 @@ int GraphTools::findMinWeight(Graph& graph)
     /* Your code here! */
     vector<Edge> ret=graph.getEdges();
     int min=INT_MAX;
-    for(auto it=ret.begin();it!=ret.end();it++)
-	if(it->weight<min)
-		min=it->weight;
+    int id=0;
+    for(int i=0;i<ret.size();i++){
+	if(ret[i].weight<min){
+		min=ret[i].weight;
+		id=i;
+	}
+    }
+    graph.setEdgeLabel(ret[id].source,ret[id].dest,"MIN");
     return min;
 }
 
@@ -58,14 +63,32 @@ int GraphTools::findMinWeight(Graph& graph)
 int GraphTools::findShortestPath(Graph& graph, Vertex start, Vertex end)
 {
     /* Your code here! */
-    vector <Edge> ret=graph.getEdges();
-    vector <Vertex> vet=graph.getVertices();
-    int min=INT_MAX;
-    for(auto it=vet.begin();it!=vet.end();it++)
-	it->label="UNVISITED";
-    for(auto it=ret.begin();it!=ret.end();it++)
-	it->label="UNVISITED";
-    
+    reset(graph);
+    graph.setVertexLabel(start,"VISITED");
+    map<Vertex,Vertex> route;
+    queue<Vertex> temp;
+    temp.push(start);
+    while(!temp.empty()){
+ 	Vertex curr=temp.front();
+	temp.pop();
+	vector<Vertex> next=graph.getAdjacent(curr);
+	for(size_t i=0;i<next.size();i++){
+		if(graph.getVertexLabel(next[i])=="UNEXPLORED"){
+			temp.push(next[i]);
+			graph.setEdgeLabel(curr,next[i],"DISCOVERY");
+			graph.setVertexLabel(next[i],"VISITED");
+			route[next[i]]=curr;	
+		}else if(graph.getEdgeLabel(curr,next[i])=="UNEXPLORED")
+			graph.setEdgeLabel(curr,next[i],"CROSS");
+	}
+
+    }
+    int min=0;
+    while(end!=start){
+	graph.setEdgeLabel(end,route[end],"MINPATH");
+	end=route[end];
+	min++;	
+    }
     return min;
 }
 
@@ -85,5 +108,45 @@ int GraphTools::findShortestPath(Graph& graph, Vertex start, Vertex end)
 void GraphTools::findMST(Graph& graph)
 {
     /* Your code here! */
+	vector<Edge> temp1=graph.getEdges();
+	vector<Vertex> temp2=graph.getVertices();
+	sort(temp1.begin(),temp1.end());
+	DisjointSets ret;
+	for(size_t i=0;i<temp2.size();i++)
+		ret.addelements(temp2[i]);
+	for(size_t i=0;i<temp1.size();i++){
+		Vertex a=temp1[i].source;
+		Vertex b=temp1[i].dest;
+		if(ret.find(a)!=ret.find(b)){
+			ret.setunion(a,b);
+			graph.setEdgeLabel(a,b,"MST");
+		}
+	}
+
+
+
 }
 
+/**
+ * Helper function to set all things UNEXPLORED
+ */
+void GraphTools::reset(Graph& graph){
+    queue<Vertex> temp;
+    Vertex curr= graph.getStartingVertex();
+    graph.setVertexLabel(curr,"UNEXPLORED");
+    temp.push(curr);
+    while(!temp.empty()){
+	curr=temp.front();
+	vector<Vertex> next=graph.getAdjacent(curr);
+	temp.pop();
+	for(int i=0;i<next.size();i++){
+		if(graph.getVertexLabel(next[i])!="UNEXPLORED"){
+			graph.setEdgeLabel(curr,next[i],"UNEXPLORED");
+			graph.setVertexLabel(next[i],"UNEXPLORED");
+			temp.push(next[i]);
+		}else if(graph.getEdgeLabel(curr,next[i])!="UNEXPLORED")
+			graph.setEdgeLabel(curr,next[i],"UNEXPLORED");
+	}
+    }
+
+}
