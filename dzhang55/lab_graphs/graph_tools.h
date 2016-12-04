@@ -42,7 +42,7 @@ namespace GraphTools
     void findMST(Graph& graph);
 
     // define any helper functions here:
-
+    void reset(Graph& graph);
 }
 
 #endif
