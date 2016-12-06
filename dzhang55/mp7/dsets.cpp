@@ -13,6 +13,7 @@ int DisjointSets::find(int elem){
 	if(elems[elem]<0)
 		return elem;
 	else{
+		elems[elem]=find(elems[elem]);
 		return find(elems[elem]);
 	}
 
