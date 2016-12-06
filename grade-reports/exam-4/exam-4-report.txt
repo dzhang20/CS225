@@ -1,0 +1,15 @@
+Exam 4 report for  Ding  Zhang
+          Problem | Score
+  ----------------+------
+     mc-cpp4-003d |   0
+     mc-cpp4-003k |   4
+     mc-cpp4-004g |   4
+     mc-cpp4-005b |   0
+     mc-cpp4-006d |   4
+     mc-cpp4-007b |   4
+  ----------------+------
+         first-05 | 6.50 / 13
+        second-02 | 0.00 / 13
+  ----------------+------
+Total: 22.50 (=45.00 percent) 
+

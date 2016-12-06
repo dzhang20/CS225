@@ -1,0 +1,42 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam4-grading/submissions/dzhang55
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts
+qid is second-02
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts/tests/second-02/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam4-grading/submissions/dzhang55/grade-.xx3
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function solution_second.cpp
+solution_second.cpp: In member function ‘void Quadtree::prunish(Quadtree::QuadtreeNode*, int, int, double)’:
+solution_second.cpp:38:44: error: ‘prunable’ was not declared in this scope
+  else if(prunable(curNode,curNode,tolerance)/(total(curNode)<=percent)){
+                                            ^
+solution_second.cpp:38:60: error: ‘total’ was not declared in this scope
+  else if(prunable(curNode,curNode,tolerance)/(total(curNode)<=percent)){
+                                                            ^
+solution_second.cpp: At global scope:
+solution_second.cpp:55:80: error: no ‘int Quadtree::prunable(Quadtree::QuadtreeNode*, Quadtree::QuadtreeNode*, int)’ member function declared in class ‘Quadtree’
+ int Quadtree::prunable(QuadtreeNode* curNode, QuadtreeNode* leaf, int tolerance){
+                                                                                ^
+solution_second.cpp:64:42: error: no ‘int Quadtree::total(Quadtree::QuadtreeNode*)’ member function declared in class ‘Quadtree’
+ int Quadtree::total(QuadtreeNode* curNode){
+                                          ^
+Makefile:20: recipe for target 'solution_second.o' failed
+make: *** [solution_second.o] Error 1
+Could not compile solution_second.o.
+
+Grade for question : 0/100
+
+
+~ ~ ~
+
+Grade: 0
+
+Details:
+test,grade
+_compiled,0
