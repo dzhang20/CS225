@@ -54,15 +54,15 @@ bool SquareMaze::canTravel(int x,int y, int dir) const{
 		return false;
 	if(((x==w-1)&&dir==0)||(x==0&&dir==2)||(y==0&&dir==3)||(y==h-1&&dir==1))
 		return false;
-	if(dir==0&&cells[y*w+x].right==true)
-		return false;
-	if(dir==1&&cells[y*w+x].down==true)
-		return false;
-	if(dir==2&&cells[y*w+x-1].right==true)
-		return false;
-	if(dir==3&&cells[(y-1)*w+x].down==true)
-		return false;
-	return true;
+	if(dir==0)
+		return !cells[x+w*y].right;
+	if(dir==1)
+		return !cells[x+w*y].down;
+	if(dir==2)
+		return !cells[y*w+x-1].right;
+	if(dir==3)
+		return !cells[(y-1)*w+x].down;
+	return false;
 
 }
 
@@ -70,7 +70,7 @@ bool SquareMaze::canTravel(int x,int y, int dir) const{
 void SquareMaze::setWall(int x, int y, int dir, bool exists){
 	if(dir==0)
 		cells[y*w+x].right=exists;
-	else
+	else if(dir==1)
 		cells[y*w+x].down=exists;
 
 }
@@ -113,10 +113,11 @@ vector <int> SquareMaze::solveMaze(){
 	for(int i=0;i<w;i++){
 		int count=0;
 		int temp=i+(h-1)*w;
-		while(temp!=0){
-			temp=sol[temp];
-			count++;
-		}
+		if(sol.count(temp)>0)
+			while(temp!=0){
+				temp=sol[temp];
+				count++;
+			}
 		if(count>max){
 			max=count;
 			index=i;
@@ -181,40 +182,37 @@ PNG* SquareMaze::drawMazeWithSolution(){
 				(*ret)(cx,cy)->red=255;
 				(*ret)(cx,cy)->green=0;
 				(*ret)(cx,cy)->blue=0;
-				cx++;
 			}
-			cx--;
+			cx+=10;
 		}else if(*it==1){
                         for(int i=0;i<=10;i++){
                                 (*ret)(cx,cy)->red=255;
                                 (*ret)(cx,cy)->green=0;
                                 (*ret)(cx,cy)->blue=0;
-                                cy++;
                         }
-                        cy--;
+                        cy+=10;
                 }else if(*it==2){
                         for(int i=0;i<=10;i++){
                                 (*ret)(cx,cy)->red=255;
                                 (*ret)(cx,cy)->green=0;
                                 (*ret)(cx,cy)->blue=0;
-                                cx--;
                         }
-                        cx++;
+                        cx-=10;
                 }else if(*it==3){
                         for(int i=0;i<=10;i++){
                                 (*ret)(cx,cy)->red=255;
                                 (*ret)(cx,cy)->green=0;
                                 (*ret)(cx,cy)->blue=0;
-                                cy--;
                         }
-                        cy++;
+                        cy-=10;
                 }
 	}
-	cx=cx/10;
+	cx-=5;
+	cy-=5;
 	for(int i=1;i<=9;i++){
-		(*ret)(cx*10+i,h*10)->red=255;
-		(*ret)(cx*10+i,h*10)->green=255;
-		(*ret)(cx*10+i,h*10)->blue=255;
+		(*ret)(cx+i,cy)->red=255;
+		(*ret)(cx+i,cy)->green=255;
+		(*ret)(cx+i,cy)->blue=255;
 
 	}
 	return ret;
