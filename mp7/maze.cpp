@@ -161,9 +161,9 @@ PNG* SquareMaze::drawMaze() const{
 		}
 		 if(cells[i].down==true){
                         for(int j=0;j<=10;j++){
-                                (*ret)((i%w+1)*10,(i/w)*10+j)->red=0;
-                                (*ret)((i%w+1)*10,(i/w)*10+j)->green=0;
-                                (*ret)((i%w+1)*10,(i/w)*10+j)->blue=0;
+                                (*ret)((i%w)*10+j,(i/w+1)*10)->red=0;
+                                (*ret)((i%w)*10+j,(i/w+1)*10)->green=0;
+                                (*ret)((i%w)*10+j,(i/w+1)*10)->blue=0;
                         }
                 }
 	}
