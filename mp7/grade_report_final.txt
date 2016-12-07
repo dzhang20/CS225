@@ -1,0 +1,437 @@
+Grading r60476 by dzhang55 committed on Tue Dec  6 22:48:18 CST 2016
+Monad Autograder
+Testing mp7 at 2016-12-07 00:38:01
+
+"This is 5 probability." ~ Jack Toole
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+addElements1  . . . . . . [5 pts] - passed
+addElements2  . . . . . . [5 pts] - passed
+testFindAndSetUnion1  . . [5 pts] - passed
+testFindAndSetUnion2  . . [5 pts] - passed
+testFindAndSetUnion3  . . [5 pts] - passed
+testMakeSmallMaze . . . . [5 pts] - passed
+testMakeMazeConnected . . [5 pts] - passed
+testMakeMazeAcyclic . . . [5 pts] - passed
+testMakeMazeTree1000  . . [5 pts] - passed
+testMakeMazeRandom  . . . [5 pts] - passed
+testSolveMazeValidPath  . [5 pts] - FAILED: unit_tests.cpp:344: Solution passes through walls
+testSolutionBottomRow . . [5 pts] - FAILED: unit_tests.cpp:365: Didn't end up at the bottom row
+testSolutionCorrectSquare [5 pts] - passed
+testSolveMazeSmall  . . . [5 pts] - passed
+testSolveMazeLarge  . . . [5 pts] - FAILED: unit_tests.cpp:404: [solution.size() => 5443] != [soln.getSolutionSize() => 6768]
+testDrawMazeSmall . . . . [5 pts] - passed
+testDrawMazeMed . . . . . [5 pts] - passed
+testDrawMazeLarge . . . . [5 pts] - passed
+testDrawSolutionMed . . . [5 pts] - FAILED: unit_tests.cpp:467: Assertion (*actualOutput == solnImage) failed
+testDrawSolutionLarge . . [5 pts] - FAILED: unit_tests.cpp:482: Assertion (*actualOutput == solnImage) failed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 75
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testSolveMazeValidPath [5 points]
+Result: FAILED: unit_tests.cpp:344: Solution passes through walls
+Took 1ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolutionBottomRow [5 points]
+Result: FAILED: unit_tests.cpp:365: Didn't end up at the bottom row
+Took 1ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolveMazeLarge [5 points]
+Result: FAILED: unit_tests.cpp:404: [solution.size() => 5443] != [soln.getSolutionSize() => 6768]
+Took 4142ms (15000ms timeout)
+Output:
+----------------------------------------------------------------
+first 10 steps in solution:
+step 0: actual=0, expected=0
+step 1: actual=0, expected=0
+step 2: actual=1, expected=1
+step 3: actual=0, expected=0
+step 4: actual=1, expected=1
+step 5: actual=1, expected=1
+step 6: actual=0, expected=0
+step 7: actual=1, expected=1
+step 8: actual=2, expected=2
+step 9: actual=2, expected=2
+
+----------------------------------------------------------------
+testDrawSolutionMed [5 points]
+Result: FAILED: unit_tests.cpp:467: Assertion (*actualOutput == solnImage) failed
+Took 88ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 505);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating request to fit in the range [0,500] x [0,500].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (415, 515);
+            Truncating req
+
+----------------------------------------------------------------
+testDrawSolutionLarge [5 points]
+Result: FAILED: unit_tests.cpp:482: Assertion (*actualOutput == solnImage) failed
+Took 5868ms (15000ms timeout)
+Output:
+----------------------------------------------------------------
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2675, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (2665, 5005);
+            Truncating request to fit in the range [0,5000] x [0,5000].
+
+[EasyPNG]: Warn
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 75
+
